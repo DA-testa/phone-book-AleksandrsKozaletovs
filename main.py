@@ -25,7 +25,7 @@ class Query:
     def deleteCaller(self, phoneNumber):    
         hashCode = self.hash_function(phoneNumber)
         bucket = self.buckets[hashCode]
-        for i in len(bucket):
+        for i in range(len(bucket)):
             if bucket[i] == phoneNumber:
                 bucket.pop(i)
                 break
