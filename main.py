@@ -30,7 +30,7 @@ class Query:
                 bucket.pop(i)
                 break
 
-    def findCaller(selft, phoneNumber):
+    def findCaller(self, phoneNumber):
         hashCode = self.hash_function(phoneNumber)
         bucket = self.buckets[hashCode]
         for i in range(0,len(bucket)-1,2):
