@@ -7,28 +7,28 @@ class Query:
         self.buckets = [[] for _ in range(bucket_count)]
             
     def hash_function(self,string):
-      hashCodeResult = 0 
-      for count in reversed(string):
-           hashCodeResult = (hashCodeResult * const + ord(c)) % self.bucket_count
-       return hashCodeResult % self.bucket_count
+        hashCodeResult = 0 
+        for count in reversed(string):
+            hashCodeResult = (hashCodeResult * const + ord(c)) % self.bucket_count
+        return hashCodeResult % self.bucket_count
 
     def addCaller(self, phoneNumber, phoneCallerName):
-      hashCode = self.hash_function(phoneNumber)
-       bucket = self.buckets[hashCode]
-       if phoneNumber not in bucket:
-           self.buckets[hashed] = [phoneNumber]+[phoneCallerName]+ bucket
-       else:
-           for i in range(0,len(bucket)-1,2):
-               if bucket[i] == phoneNumber:
-                   bucket[i+1] == phoneCallerName
+        hashCode = self.hash_function(phoneNumber)
+        bucket = self.buckets[hashCode]
+        if phoneNumber not in bucket:
+            self.buckets[hashed] = [phoneNumber]+[phoneCallerName]+ bucket
+        else:
+            for i in range(0,len(bucket)-1,2):
+                if bucket[i] == phoneNumber:
+                    bucket[i+1] == phoneCallerName
         
     def deleteCaller(self, phoneNumber):    
         hashCode = self.hash_function(phoneNumber)
         bucket = self.buckets[hashCode]
-       for i in len(bucket):
-           if bucket[i] == phoneNumber:
-              bucket.pop(i)
-              break
+        for i in len(bucket):
+            if bucket[i] == phoneNumber:
+                bucket.pop(i)
+                break
 
     def findCaller(selft, phoneNumber):
         hashCode = self.hash_function(phoneNumber)
