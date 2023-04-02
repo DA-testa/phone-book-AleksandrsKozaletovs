@@ -28,6 +28,7 @@ class Query:
         for i in range(len(bucket)):
             if bucket[i] == phoneNumber:
                 bucket.pop(i)
+                bucket.pop(i)                
                 break
 
     def findCaller(self, phoneNumber):
