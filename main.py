@@ -61,5 +61,5 @@ def process_queries(queries):
 if __name__ == '__main__':
     countOfContacts = int(input())
     contacts = Query(countOfContacts)
-    write_responses(process_queries([input for i in range(countOfContacts)]))
+    write_responses(process_queries([input() for i in range(countOfContacts)]))
 
