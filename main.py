@@ -2,7 +2,7 @@
 
 class Query:
     const = 263
-    remainder = 1000004
+    remainder = 1000003
     def __init__(self, bucket_count):
         self.bucket_count = bucket_count
         self.buckets = [[] for _ in range(bucket_count)]
