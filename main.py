@@ -2,6 +2,7 @@
 
 class Query:
     const = 256
+    remainder = 10001
     def __init__(self, bucket_count):
         self.bucket_count = bucket_count
         self.buckets = [[] for _ in range(bucket_count)]
@@ -9,7 +10,7 @@ class Query:
     def hash_function(self,string):
         hashCodeResult = 0 
         for count in reversed(string):
-            hashCodeResult = (hashCodeResult * self.const + ord(count)) % self.bucket_count
+            hashCodeResult = (hashCodeResult * self.const + ord(count)) % self.remainder
         return hashCodeResult % self.bucket_count
 
     def addCaller(self, phoneNumber, phoneCallerName):
