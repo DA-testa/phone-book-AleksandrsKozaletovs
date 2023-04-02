@@ -11,7 +11,7 @@ class Query:
         hashCodeResult = 0 
         for count in reversed(string):
             hashCodeResult = (hashCodeResult * self.const + ord(count)) % self.remainder
-        return hashCodeResult % self.bucket_count
+        return hashCodeResult
 
     def addCaller(self, phoneNumber, phoneCallerName):
         hashCode = self.hash_function(phoneNumber)
