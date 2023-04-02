@@ -16,7 +16,7 @@ class Query:
         hashCode = self.hash_function(phoneNumber)
         bucket = self.buckets[hashCode]
         if phoneNumber not in bucket:
-            self.buckets[hashed] = [phoneNumber]+[phoneCallerName]+ bucket
+            self.buckets[hashCode] = [phoneNumber]+[phoneCallerName]+ bucket
         else:
             for i in range(0,len(bucket)-1,2):
                 if bucket[i] == phoneNumber:
