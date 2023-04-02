@@ -40,7 +40,7 @@ def findCaller(selft, phoneNumber):
     
 def read_queries():
     countOfContacts = int(input())
-    return [Query(input().split()) for i in range(n)]
+    return [Query(input().split()) for i in range(countOfContacts)]
 
 def write_responses(result):
     print('\n'.join(result))
@@ -51,11 +51,11 @@ def process_queries(queries):
     for cur_query in queries:
         commandArray = list(cur_query.split())
         if commandArray[0] == "add":
-           contacts.addCaller(commandArray[1],commandArray[2])           
+           contacts.ad(commandArray[1],commandArray[2])           
         elif commandArray[0]  == "del":
-           contacts.deleteCaller(commandArray[1])           
+           contacts.delete(commandArray[1])           
         elif commandArray[0] == "find":         
-            result.append(contacts.findCaller(commandArray[1]))
+            result.append(contacts.find(commandArray[1]))
     return result
 
 if __name__ == '__main__':
