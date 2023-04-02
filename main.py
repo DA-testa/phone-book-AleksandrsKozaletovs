@@ -38,7 +38,7 @@ class Query:
         for i in range(0,len(bucket)-1,2):
             if bucket[i] == phoneNumber:
                 return bucket[i + 1]
-            return "not found"
+        return "not found"
     
 def read_queries():
     countOfContacts = int(input())
