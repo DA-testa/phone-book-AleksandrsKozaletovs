@@ -1,8 +1,8 @@
 # python3
 
 class Query:
-    const = 256
-    remainder = 10001
+    const = 13
+    remainder = 256
     def __init__(self, bucket_count):
         self.bucket_count = bucket_count
         self.buckets = [[] for _ in range(bucket_count)]
@@ -19,7 +19,7 @@ class Query:
         if phoneNumber not in bucket:
             self.buckets[hashCode] = [phoneNumber]+[phoneCallerName]+ bucket
         else:
-            for i in range(0,len(bucket)-1,2):
+            for i in range(1,len(bucket)):
                 if bucket[i] == phoneNumber:
                     bucket[i+1] == phoneCallerName
         
@@ -35,7 +35,7 @@ class Query:
     def findCaller(self, phoneNumber):
         hashCode = self.hash_function(phoneNumber)
         bucket = self.buckets[hashCode]
-        for i in range(0,len(bucket)-1,2):
+        for i in range(1,len(bucket)):
             if bucket[i] == phoneNumber:
                 return bucket[i + 1]
             return "not found"
