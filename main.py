@@ -39,7 +39,7 @@ def findCaller(selft, phoneNumber):
         return "not found"
     
 def read_queries():
-    n = int(input())
+    countOfContacts = int(input())
     return [Query(input().split()) for i in range(n)]
 
 def write_responses(result):
