@@ -50,11 +50,11 @@ def process_queries(queries):
     # Keep list of all existing (i.e. not deleted yet) contacts.
     for cur_query in queries:
         commandArray = list(cur_query.split())
-        if commandArray[0] == "add":
+        if commandArray[0] == 'add':
            contacts.add(commandArray[1],commandArray[2])           
-        elif commandArray[0]  == "del":
+        elif commandArray[0]  == 'del':
            contacts.delete(commandArray[1])           
-        elif commandArray[0] == "find":         
+        elif commandArray[0] == 'find':         
             result.append(contacts.find(commandArray[1]))
     return result
 
