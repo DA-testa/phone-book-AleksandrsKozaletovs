@@ -51,11 +51,11 @@ def process_queries(queries):
     for cur_query in queries:
         commandArray = list(cur_query.split())
         if commandArray[0] == 'add':
-           contacts.add(commandArray[1],commandArray[2])           
+           contacts.addCaller(commandArray[1],commandArray[2])           
         elif commandArray[0]  == 'del':
-           contacts.delete(commandArray[1])           
+           contacts.deleteCaller(commandArray[1])           
         elif commandArray[0] == 'find':         
-            result.append(contacts.find(commandArray[1]))
+            result.append(contacts.findCaller(commandArray[1]))
     return result
 
 if __name__ == '__main__':
