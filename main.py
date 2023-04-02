@@ -51,7 +51,7 @@ def process_queries(queries):
     for cur_query in queries:
         commandArray = list(cur_query.split())
         if commandArray[0] == "add":
-           contacts.ad(commandArray[1],commandArray[2])           
+           contacts.add(commandArray[1],commandArray[2])           
         elif commandArray[0]  == "del":
            contacts.delete(commandArray[1])           
         elif commandArray[0] == "find":         
