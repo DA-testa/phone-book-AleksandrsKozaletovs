@@ -17,19 +17,18 @@ class Query:
         hashCode = self.hash_function(phoneNumber)
         bucket = self.buckets[hashCode]
         if phoneNumber not in bucket:
-            self.buckets[hashCode] = [phoneNumber]+[phoneCallerName]+ bucket
+            self.buckets[hashCode] = [phoneNumber] + [phoneCallerName] + bucket
         else:
             for i in range(0,len(bucket)-1,2):
                 if bucket[i] == phoneNumber:
-                    bucket[i+1] == phoneCallerName
+                    bucket[i+1] = phoneCallerName
         
     def deleteCaller(self, phoneNumber):    
         hashCode = self.hash_function(phoneNumber)
         bucket = self.buckets[hashCode]
         for i in range(len(bucket)):
             if bucket[i] == phoneNumber:
-                bucket.pop(i)
-                bucket.pop(i)                
+                bucket.pop(i)             
                 break
 
     def findCaller(self, phoneNumber):
