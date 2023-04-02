@@ -9,7 +9,7 @@ class Query:
     def hash_function(self,string):
         hashCodeResult = 0 
         for count in reversed(string):
-            hashCodeResult = (hashCodeResult * self.const + ord(c)) % self.bucket_count
+            hashCodeResult = (hashCodeResult * self.const + ord(count)) % self.bucket_count
         return hashCodeResult % self.bucket_count
 
     def addCaller(self, phoneNumber, phoneCallerName):
